@@ -1,0 +1,12 @@
+# python venv files
+./Include
+./Lib
+./Scripts
+pyenv.cfg
+./venv
+./.venv
+
+./old
+./o
+./output
+./output2
