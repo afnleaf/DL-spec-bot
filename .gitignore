@@ -6,6 +6,8 @@ pyenv.cfg
 ./venv
 ./.venv
 
+__pycache__
+
 ./old
 ./o
 ./output
