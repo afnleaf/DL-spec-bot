@@ -7,7 +7,7 @@ import win32gui
 import win32com.client
 import numpy as np
 import cv2
-import pytesseract
+#import pytesseract
 import subprocess
 # modules
 import controls
@@ -126,5 +126,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 

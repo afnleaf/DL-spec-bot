@@ -1,3 +1,7 @@
+# vision.py
+# the computer vision functions leveraging the power of tesseract and opencv
+# uses purely pre transformer techniques
+
 import cv2
 import numpy as np
 import pytesseract
@@ -231,7 +235,7 @@ def check_hero_death(image, template):
         return False
 
 
-def process_image(image):
+def process_image_networth(image):
     #print("process image")
 
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -263,7 +267,7 @@ def check_networth(image, heroes):
     
     for i, x in enumerate(header.xpos_heroes):
         net = image[y:y+h, x:x+w]
-        net = process_image(net)
+        net = process_image_networth(net)
         cv2.imwrite(f"o/net{i+1}.png", net)
         text = pytesseract.image_to_string(net, config=config_psm)
         text = text.strip()
