@@ -9,6 +9,6 @@ pyenv.cfg
 __pycache__
 
 old
-o
-output
+o/*
+output/*
 output2
