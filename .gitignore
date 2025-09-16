@@ -8,7 +8,7 @@ pyenv.cfg
 
 __pycache__
 
-./old
-./o
-./output
-./output2
+old
+o
+output
+output2
