@@ -15,7 +15,8 @@ def check_game_update(image, template):
     print("check game update")
 
     # crop
-    x, y, w, h = 450, 770, 40, 40
+    #x, y, w, h = 450, 770, 40, 40
+    x, y, w, h = 15, 10, 315, 75
     image = image[y:y+h, x:x+w]
     # grayscale
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -179,7 +180,8 @@ def check_hero_death(image, template):
     print("check death")
 
     # crop
-    x, y, w, h = 450, 770, 40, 40
+    #x, y, w, h = 450, 770, 40, 40
+    x, y, w, h = 475, 750, 40, 40
     image = image[y:y+h, x:x+w]
     # grayscale
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

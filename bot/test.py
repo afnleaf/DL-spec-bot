@@ -41,7 +41,11 @@ def run_tests():
 
 
 def test_game_update():
-    return False
+    update_template = np.array(cv2.imread("./templates/update.png"))
+    filename = f'update (1).png'
+    image = get_image(filename)
+
+    return vision.check_game_update(image, update_template)
 
 
 def test_spectating():
@@ -62,18 +66,43 @@ def test_victory():
 
     return vision.check_game_end(image, victory_template)
 
-    
-
-
-    
-
-
 def test_death():
-    return False
+    death_template = np.array(cv2.imread("./templates/0death.png"))
+    
+    filename = f'death (1).png'
+    image = get_image(filename)
+
+    return vision.check_hero_death(image, death_template)
 
 
 def test_networth():
-    return False
+    
+    # can reuse the other screenshots
+    filename = f'spectating (1).png'
+    image = get_image(filename)
+
+    heroes = header.create_entities()
+    heroes = vision.check_networth(image, heroes)
+    print(heroes)
+
+    nw = [
+        {'name': 'a1', 'nw': 16, 'index': 0}, 
+        {'name': 'a2', 'nw': 13, 'index': 1}, 
+        {'name': 'a3', 'nw': 14, 'index': 2}, 
+        {'name': 'a4', 'nw': 12, 'index': 3}, 
+        {'name': 'a5', 'nw': 14, 'index': 4}, 
+        {'name': 'a6', 'nw': 0, 'index': 5}, 
+        {'name': 's1', 'nw': 0, 'index': 6}, 
+        {'name': 's2', 'nw': 0, 'index': 7}, 
+        {'name': 's3', 'nw': 14, 'index': 8}, 
+        {'name': 's4', 'nw': 17, 'index': 9}, 
+        {'name': 's5', 'nw': 7, 'index': 10}, 
+        {'name': 's6', 'nw': 0, 'index': 11}
+    ]
+
+    return True if heroes == nw else False
+
+
     
 
 # get image from given filename

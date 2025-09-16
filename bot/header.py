@@ -13,3 +13,10 @@ def init():
     global open_deadlock_steam
     global depth
 
+def create_entities():
+    entities = []    
+    for i in range(6):
+        entities.append({"name": f"a{i+1}", "nw": 0, "index": i})
+    for i in range(6):
+        entities.append({"name": f"s{i+1}", "nw": 0, "index": i+6})
+    return entities

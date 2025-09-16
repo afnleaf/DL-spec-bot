@@ -45,18 +45,11 @@ def callback(hwnd, hwnds):
     return True
 
 
-def create_entities():
-    entities = []    
-    for i in range(6):
-        entities.append({"name": f"a{i+1}", "nw": 0, "index": i})
-    for i in range(6):
-        entities.append({"name": f"s{i+1}", "nw": 0, "index": i+6})
-    return entities
 
 
 def control_state(hwnd):
     # create hero networth data 
-    heroes = create_entities()
+    heroes = header.create_entities()
 
     # load some stuff
     cwd = os.getcwd() 
